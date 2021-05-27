@@ -1,0 +1,63 @@
+name: rofi
+base: core18
+version: '1.6.1'
+summary: A windows switcher, application launcher, and dmenu replacement.
+description: |
+  Rofi started as a clone of simpleswitcher, written by Sean Pringle - a
+  popup window switcher roughly based on superswitcher. Simpleswitcher laid
+  the foundations, and therefore Sean Pringle deserves most of the credit for
+  this tool. Rofi (renamed, as it lost the simple property) has been extended
+  with extra features, like an application launcher and ssh-launcher, and can
+  act as a drop-in dmenu replacement, making it a very versatile tool.
+grade: devel
+confinement: strict
+apps:
+  part-rofi:
+    command: bin/rofi
+    extensions:
+      - gnome-3-28
+parts:
+  part-rofi:
+    plugin: autotools
+    configflags:
+      - --disable-check
+    source: https://github.com/davatorium/rofi.git
+    source-tag: 1.6.1
+    build-packages:
+      - gcc
+      - make
+      - autoconf
+      - automake
+      - pkg-config
+      - flex
+      - bison
+      - check
+      - libpango1.0-dev
+      - libpangocairo-1.0-0
+      - libcairo2-dev
+      - libglib2.0-dev
+      - libgdk-pixbuf2.0-dev
+      - libstartup-notification0-dev
+      - libxkbcommon-dev
+      - libxkbcommon-x11-dev
+      - libxcb1-dev
+      - libxcb-util-dev
+      - libxcb-ewmh-dev
+      - libxcb-icccm4-dev
+      - libxcb-xrm-dev
+      - libxcb-cursor-dev
+      - libxcb-randr0-dev
+      - libxcb-xinerama0-dev
+    stage-packages:
+      - libstartup-notification0
+      - libxcb-cursor0
+      - libxcb-ewmh2
+      - libxcb-icccm4
+      - libxcb-image0
+      - libxcb-randr0
+      - libxcb-render-util0
+      - libxcb-util1
+      - libxcb-xinerama0
+      - libxcb-xkb1
+      - libxcb-xrm0
+      - libxkbcommon-x11-0
