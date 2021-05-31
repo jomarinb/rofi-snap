@@ -12,12 +12,12 @@ description: |
 grade: devel
 confinement: strict
 apps:
-  part-rofi:
+  rofi:
     command: bin/rofi
     extensions:
       - gnome-3-28
 parts:
-  part-rofi:
+  rofi:
     plugin: autotools
     configflags:
       - --disable-check
