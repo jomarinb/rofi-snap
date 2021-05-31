@@ -1,4 +1,4 @@
-name: rofi
+name: rofi-snap
 base: core18
 version: '1.6.1'
 summary: A windows switcher, application launcher, and dmenu replacement.
